@@ -1,4 +1,5 @@
-﻿using C42_G02_OOP03.Polymorphism;
+﻿using C42_G02_OOP03.Binding;
+using C42_G02_OOP03.Polymorphism;
 using System.Security.Cryptography.X509Certificates;
 
 namespace C42_G02_OOP03
@@ -33,12 +34,43 @@ namespace C42_G02_OOP03
 
         #endregion
 
+        #region Ex01 - Employee 
+
+        // Binding
+        // Employee reference can refer for an object from employee type and object from child type
+        public static void ProccessEmployee(Employee employee)
+        {
+            if (employee is not null)
+            {
+                employee.GetEmployeeType();
+                employee.GetEmployeeData();
+            }
+        }
+        //public static void ProccessEmployee(PartTimeEmployee employee)
+        //{
+        //    if (employee is not null)
+        //    {
+        //        employee.GetEmployeeType();
+        //        employee.GetEmployeeData();
+        //    }
+        //}
+        //public static void ProccessEmployee(FullTimeEmployee employee)
+        //{
+        //    if (employee is not null)
+        //    {
+        //        employee.GetEmployeeType();
+        //        employee.GetEmployeeData();
+        //    }
+        //}
+
+        #endregion
+
         static void Main()
         {
             // RelationShip Between Classes
             // PolyMorphism [OverLoading]
             // Polymorphism [OverRiding]
-            //
+            // Binding
 
             #region 1- Association - Inheritance
 
@@ -171,6 +203,36 @@ namespace C42_G02_OOP03
             // Valid Because its a child will hold the parent and the child data
             // its not casting because i transfare from data type to the same datatype 
             // otherwise go implement the casting operator
+
+
+            #endregion
+
+            #region Ex01
+
+            //FullTimeEmployee fullTimeEmployee = new FullTimeEmployee(); // its not binding
+            //fullTimeEmployee.GetEmployeeData();
+            //fullTimeEmployee.GetEmployeeType();
+            // Will Fire from the parent
+
+            // No binding
+            //FullTimeEmployee employee = new FullTimeEmployee(10,"Muhamed Hajajii",30,6000) { };
+            //ProccessEmployee(employee);
+
+            //PartTimeEmployee partEmp = new PartTimeEmployee()
+            //{
+            //    ID = 1,
+            //    Name = "Muhamed Hajiii",
+            //    Age = 25,
+            //    HourRate = 25,
+            //    CountOfHours = 25
+            //};
+
+            //ProccessEmployee(partEmp);
+
+            #endregion
+
+            #region Ex02
+
 
 
             #endregion
