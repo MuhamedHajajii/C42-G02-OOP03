@@ -231,7 +231,53 @@ namespace C42_G02_OOP03
 
             #endregion
 
+            // We don't need to know how to use the binding as much as we should know we did it behave like this
+
+
+
             #region Ex02
+
+            //Console.WriteLine("(Parent ==>> Child)");
+            //Console.WriteLine("==========================");
+            //// Parent  -- > Grand Child
+            //// binding
+            //// reference of typeA know refer to the his part inside the TypeC
+            //TypeA typeA = new TypeC(1,2,3);
+            //typeA.A = 1;
+            ////typeA.B = 1; // invalid
+            ////typeA.C = 1; // invalid
+
+            //typeA.MyFun01(); // override using new keyword -- will return i'm base i'm parent [static binding] static bounded method -- depend on the ref -- compilation time
+            //typeA.MyFun02(); // override using virtual override -- will retrun the last override [dynamic binding] dynamic bonded method -- depend on the object -- runtime CLR
+
+            //Console.WriteLine("==========================");
+            //Console.WriteLine("(Child ==>> Grand Child)");
+            //Console.WriteLine("==========================");
+            //// TypeB is the parent for the TypeC
+            //// will refer for the part of TypeB inside the TypeC
+            //TypeB typeB = new TypeC(1,2,3);
+            //typeB.A = 1;
+            //typeB.B = 1;
+            ////typeA.C = 1; // invalid
+
+            //typeB.MyFun01(); // static bounded method will fire from the ref -- from the ref
+            //typeB.MyFun02(); // dynamic bounded method will fire from the last override -- from the object 
+
+
+            Console.WriteLine("==========================");
+            Console.WriteLine("(Grand Child ==>> Child Grand Child)");
+            Console.WriteLine("==========================");
+
+            TypeA typeA = new TypeE(1,2,3,4,5); // indirect Parent
+            TypeB typeB = new TypeE(1,2,3,4,5); // indirect Parent
+            TypeC typeC = new TypeE(1,2,3,4,5); // indirect Parent
+            TypeD typeD = new TypeE(1,2,3,4,5); // indirect Parent
+
+            typeA.MyFun02(); // Dynamic Bounnded method -- late binding so the clr will bind depend on the object type and the last override was in the typeC
+            typeB.MyFun02(); // Dynamic Bounnded method -- late binding so the clr will bind depend on the object type and the last override was in the typeC
+            typeC.MyFun02(); // Dynamic Bounnded method -- late binding so the clr will bind depend on the object type and the last override was in the typeC
+            typeD.MyFun02(); // Dynamic Bounnded method -- late binding so the clr will bind depend on the object type and the last override was in the typeC --> [With New Sequence]
+
 
 
 

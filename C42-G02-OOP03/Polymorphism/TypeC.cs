@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace C42_G02_OOP03.Polymorphism
 {
+    // TypeC now has two pernent 
+    // Direct Parent {TypeB}
+    // indirect Parent {TypeA}
     internal class TypeC : TypeB
     {
         public int C { get; set; }
