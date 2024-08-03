@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using C42_G02_OOP03.Polymorphism;
+using System.Security.Cryptography.X509Certificates;
 
 namespace C42_G02_OOP03
 {
@@ -86,7 +87,30 @@ namespace C42_G02_OOP03
 
             #endregion
 
+            #region 3- PolyMorphism - overriding
 
+            /** While there is inheritance only [Only with class]
+             * Overriding with Relationship ==> Inheritance 
+             * You Inherit functions from other class and want to change it behavior as long as the parent class allow the override 
+             * if not allow the override you still can override it but in binding you will still cannot lets know why
+             */
+
+            // In This case nothing will change even i use the new or the override and virtual
+            // The Reference refer to the object so it can see all the data on it 
+            TypeA typeA = new TypeA(1);
+            typeA.A = 10;
+            typeA.MyFun01();
+            typeA.MyFun02();
+
+            Console.WriteLine("======================");
+
+            TypeB typeB = new TypeB(10,20);
+            typeB.A = 10;
+            typeB.B = 10;
+            typeB.MyFun01();
+            typeB.MyFun02();
+
+            #endregion
 
         }
     }
