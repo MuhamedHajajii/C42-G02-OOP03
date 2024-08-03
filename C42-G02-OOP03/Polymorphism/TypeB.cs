@@ -1,11 +1,10 @@
-﻿using C42_G02_OOP03.Polymorphism;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace C42_G02_OOP03
+namespace C42_G02_OOP03.Polymorphism
 {
     internal class TypeB : TypeA
     {

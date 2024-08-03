@@ -97,18 +97,53 @@ namespace C42_G02_OOP03
 
             // In This case nothing will change even i use the new or the override and virtual
             // The Reference refer to the object so it can see all the data on it 
-            TypeA typeA = new TypeA(1);
-            typeA.A = 10;
-            typeA.MyFun01();
-            typeA.MyFun02();
+            //TypeA typeA = new TypeA(1);
+            //typeA.A = 10;
+            //typeA.MyFun01();
+            //typeA.MyFun02();
 
-            Console.WriteLine("======================");
+            //Console.WriteLine("======================");
 
-            TypeB typeB = new TypeB(10,20);
-            typeB.A = 10;
-            typeB.B = 10;
-            typeB.MyFun01();
-            typeB.MyFun02();
+            //TypeB typeB = new TypeB(10,20);
+            //typeB.A = 10;
+            //typeB.B = 10;
+            //typeB.MyFun01();
+            //typeB.MyFun02();
+
+
+
+
+            #endregion
+
+            #region 4- Binding
+
+            /** When You make a reference from parent refer to object from the child Datatype
+             * TypeA is the base and Type B is the child 
+             */
+
+            //TypeA refBase = new TypeA(1);
+            TypeA refBase;
+            // Declare for a reference from typeA can refer for an object from typeA and any object inherit from TypeA
+            refBase = new TypeB(1, 2);
+            // This Is Binding
+            // its not refer to the whole object of the TypeB its only refer to the parent data
+
+            refBase.A = 1;
+            //refBase.B = 1; // invalid -- bacause its own by the child not the parent reference
+            refBase.MyFun01();
+            refBase.MyFun02();
+            // Both of the Parent
+            // with the new you call the parent method
+            // with override you call the object method
+
+            /** ONLY WHEN THERE ARE A BINDING - Reference from the parent refer for a object from the child
+             * 
+             * with NEW --> Static Bounded -- static bounded method -- Early binding -- compliation Time 
+             * -- static binding works during the compile time -- Bind The function call based on the referecne type
+             * woth override --> dynamic bounded , dynamic bounded method -- late binding , runtime , clr will make it 
+             * -- Clr will bind the function call based on the object type not the reference type
+             */
+
 
             #endregion
 
