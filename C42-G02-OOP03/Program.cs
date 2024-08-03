@@ -122,16 +122,16 @@ namespace C42_G02_OOP03
              */
 
             //TypeA refBase = new TypeA(1);
-            TypeA refBase;
-            // Declare for a reference from typeA can refer for an object from typeA and any object inherit from TypeA
-            refBase = new TypeB(1, 2);
-            // This Is Binding
-            // its not refer to the whole object of the TypeB its only refer to the parent data
+            //TypeA refBase;
+            //// Declare for a reference from typeA can refer for an object from typeA and any object inherit from TypeA
+            //refBase = new TypeB(1, 2);
+            //// This Is Binding
+            //// its not refer to the whole object of the TypeB its only refer to the parent data
 
-            refBase.A = 1;
-            //refBase.B = 1; // invalid -- bacause its own by the child not the parent reference
-            refBase.MyFun01();
-            refBase.MyFun02();
+            //refBase.A = 1;
+            ////refBase.B = 1; // invalid -- bacause its own by the child not the parent reference
+            //refBase.MyFun01();
+            //refBase.MyFun02();
             // Both of the Parent
             // with the new you call the parent method
             // with override you call the object method
@@ -143,6 +143,34 @@ namespace C42_G02_OOP03
              * woth override --> dynamic bounded , dynamic bounded method -- late binding , runtime , clr will make it 
              * -- Clr will bind the function call based on the object type not the reference type
              */
+
+
+            #endregion
+
+            #region 5- Not Binding
+
+            // thats not binding its just explicit casting -- unsafe casting
+            //TypeB ChildRed = (TypeB) new TypeA(1);
+            // casting operator 
+
+            //TypeA typeA = new TypeA(1);
+
+            //TypeB typeB = (TypeB) typeA;
+
+            //Console.WriteLine(typeB.A);
+            //Console.WriteLine(typeB.B);
+            // Invalid Casting Exception
+            // this casting operator you didn't implement it yet 
+
+            //TypeA typeA = new TypeB(1,2);
+
+            //TypeB typeB = (TypeB) typeA;
+
+            //Console.WriteLine(typeB.A);
+            //Console.WriteLine(typeB.B);
+            // Valid Because its a child will hold the parent and the child data
+            // its not casting because i transfare from data type to the same datatype 
+            // otherwise go implement the casting operator
 
 
             #endregion
